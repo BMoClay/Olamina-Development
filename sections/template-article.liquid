@@ -27,7 +27,7 @@
             {% when 'featured_image' %}
                 <div itemprop="image" class="max-w-3xl bg-blue-100 rounded-md mx-2 md:mx-auto overflow-hidden my-4">
                     {% if article.image != blank %}
-                    <img class="w-full h-80 md:h-96 object-cover object-center" src="{{ article.image | img_url: 'large'}}" alt="{{ article.image.alt }}">
+                        <img class="w-full h-80 md:h-96 object-cover object-center" src="{{ article.image | img_url: 'large'}}" alt="{{ article.image.alt }}">
                     {% else %}
                         {% assign placeholder_image = 'lifestyle-1' %}
                         {{ placeholder_image | placeholder_svg_tag: 'w-full h-80 md:h-96 object-cover object-center p-5' }}        
@@ -58,9 +58,9 @@
                         </div>            
                     {% endfor %}
 
-                    {% if paginate.pages > 1 %}
-                        {{ paginate | default_pagination }}
-                    {% endif %}
+                   <div class="max-w-6xl mx-auto">
+                       {% render 'pagination', pagination: paginate %}
+                   </div>
                 {% endpaginate %}
             </div>
         {% else %}
@@ -117,7 +117,7 @@
                             name="comment[email]" 
                             id="comment_email" 
                             class="w-full text-gray-700 border py-3 px-4 mb-3 focus:outline-none"
-                            placeholder="Jane@doe.com"
+                            placeholder="jane@doe.com"
                             required
                         >
                     </div>
