@@ -1,8 +1,8 @@
 {
     "sections": {
         "template": {
-            "type": "template-collection"
-        }           
+            "type": "template-page"
+        }
     },
     "order": ["template"]
 }
